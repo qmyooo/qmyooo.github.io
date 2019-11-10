@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      macOS下使用Hugo&#43;GitHub搭建个人博客 - Mengyuan QIN
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Mengyuan QIN
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">macOS下使用Hugo&#43;GitHub搭建个人博客</h2>
+      <section class="post-meta">
+        <time class="post-date">November 10, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      
+
+<h3 id="一-安装hugo">一、安装Hugo</h3>
+
+<p>打开终端输入</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>安装完成后利用<code>hugo version</code>检查是否成功</p>
+
+<h3 id="二-用hugo创建个人博客">二、用Hugo创建个人博客</h3>
+
+<pre><code>hugo new site myblog
+</code></pre>
+
+<h3 id="三-下载并设置主题">三、下载并设置主题</h3>
+
+<p>Hugo主题库地址：<themes.gohugo.io>
+以Arabica主题为例，下载主题输入</p>
+
+<pre><code>git clone https://github.com/nirocfz/arabica.git themes/arabica
+</code></pre>
+
+<h3 id="四-在本地启动博客">四、在本地启动博客</h3>
+
+<pre><code>hugo server -t arabica --buildDrafts
+</code></pre>
+
+<p>此时可通过<a href="http://localhost:1313/">http://localhost:1313/</a> 访问本地站点
+crtl+c 结束本地访问</p>
+
+<h3 id="五-创建文章">五、创建文章</h3>
+
+<pre><code>hugo new post/blog.md
+</code></pre>
+
+<p>此时在content/post目录下创建了名为blog.md的markdown文件，接下来可以使用markdown编辑器对blog.md进行编辑，输入文章。
+在根目录通过<code>hugo server -t arabica --buildDrafts</code>可以进行本地预览</p>
+
+<h3 id="六-将博客部署到远端服务器">六、将博客部署到远端服务器</h3>
+
+<p>GitHub创建一个新的repository名为username.github.io，其中username必须是小写的自己的GitHub昵称。
+输入</p>
+
+<pre><code>hugo --theme=arabica --baseUrl=&quot;https://username.github.io/&quot; --buildDrafts
+</code></pre>
+
+<p>生成/public目录，需要将/public上传到GitHub
+输入</p>
+
+<pre><code>cd public/
+git init
+git add .
+git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/username/username.github.io.git`
+git push -u origin master
+</code></pre>
+
+<p>输入GitHub用户名及密码
+完成。</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+<li>[CodeSheep][<a href="https://www.bilibili.com/video/av51574688?t=1436">https://www.bilibili.com/video/av51574688?t=1436</a>]</li>
+</ol>
+
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section class="copyright">&copy; 2019 Mengyuan QIN</section>
+  <section class="poweredby"><a href="https://github.com/nirocfz/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+</footer>
+
+
+
+    </body>
+</html>

@@ -6,10 +6,26 @@
     <description>Recent content on Mengyuan QIN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2019 07:51:48 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2019 21:37:28 +0800</lastBuildDate>
     
 	<atom:link href="https://qmyooo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>macOS下使用Hugo&#43;GitHub搭建个人博客</title>
+      <link>https://qmyooo.github.io/post/hugo_github_blog/</link>
+      <pubDate>Sun, 10 Nov 2019 21:37:28 +0800</pubDate>
+      
+      <guid>https://qmyooo.github.io/post/hugo_github_blog/</guid>
+      <description>一、安装Hugo 打开终端输入
+brew install hugo  安装完成后利用hugo version检查是否成功
+二、用Hugo创建个人博客 hugo new site myblog  三、下载并设置主题 Hugo主题库地址： 以Arabica主题为例，下载主题输入
+git clone https://github.com/nirocfz/arabica.git themes/arabica  四、在本地启动博客 hugo server -t arabica --buildDrafts  此时可通过http://localhost:1313/ 访问本地站点 crtl+c 结束本地访问
+五、创建文章 hugo new post/blog.md  此时在content/post目录下创建了名为blog.md的markdown文件，接下来可以使用markdown编辑器对blog.md进行编辑，输入文章。 在根目录通过hugo server -t arabica --buildDrafts可以进行本地预览
+六、将博客部署到远端服务器 GitHub创建一个新的repository名为username.github.io，其中username必须是小写的自己的GitHub昵称。 输入
+hugo --theme=arabica --baseUrl=&amp;quot;https://username.github.io/&amp;quot; --buildDrafts  生成/public目录，需要将/public上传到GitHub 输入
+cd public/ git init git add . git commit -m &amp;quot;first commit&amp;quot; git remote add origin https://github.</description>
+    </item>
     
     <item>
       <title>第一篇测试</title>
