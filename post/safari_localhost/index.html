@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      macOS环境下Safari无法访问http://localhost:1313/(bind address 127.0.0.1) - Mengyuan QIN
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Mengyuan QIN
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">macOS环境下Safari无法访问http://localhost:1313/(bind address 127.0.0.1)</h2>
+      <section class="post-meta">
+        <time class="post-date">November 12, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      
+
+<h4 id="问题描述">问题描述：</h4>
+
+<p>运行<code>Hugo server</code>命令，在本地启动Hugo</p>
+
+<p>print：<code>Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)</code></p>
+
+<p>在Safari中登陆<code>http://localhost:1313/</code>页面显示为空白</p>
+
+<h4 id="解决方法">解决方法：</h4>
+
+<ol>
+<li>在终端输入<code>open /etc</code>打开etc文件夹</li>
+<li>找到hosts文件复制到桌面</li>
+<li>打开桌面的hosts，删除::1 localhosts</li>
+<li>保存并复制到/etc目录下</li>
+</ol>
+
+<h4 id="分析原因">分析原因：</h4>
+
+<p>可能是由于Safari支持IPv6导致。如果使用localhost，那么就认为是使用::1，即IPv6，Safari可以正常显示。而127.0.0.1是IPv4，因此地址栏输入127.0.0.1会出现400 -Bad Request。</p>
+
+<h4 id="参考来源">参考来源</h4>
+
+<ul>
+<li><a href="https://www.jianshu.com/p/b3b40ede4842">丁锅锅</a></li>
+</ul>
+
+    </section>
+    <footer class="post-footer">
+      <section class="tags post-meta">
+        Tagged
+        <a href="https://qmyooo.github.io/tags/safari/">Safari</a>
+          
+      </section>
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section class="copyright">&copy; 2019 Mengyuan QIN</section>
+  <section class="poweredby"><a href="https://github.com/nirocfz/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+</footer>
+
+
+
+    </body>
+</html>

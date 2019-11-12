@@ -73,6 +73,26 @@
   <article class="post">
 	<header class="post-header">
     
+		<h2 class="post-title"><a href="/post/safari_localhost/">macOS环境下Safari无法访问http://localhost:1313/(bind address 127.0.0.1)</a></h2>
+	</header>
+	<section class="post-excerpt">
+    <p>
+       问题描述： 运行Hugo server命令，在本地启动Hugo
+print：Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+在Safari中登陆http://localhost:1313/页面显示为空白
+解决方法：  在终端输入open /etc打开etc文件夹 找到hosts文件复制到桌面 打开桌面的hosts，删除::1 localhosts 保存并复制到/etc目录下  分析原因： 可能是由于Safari支持IPv6导致。如果使用localhost，那么就认为是使用::1，即IPv6，Safari可以正常显示。而127.0.0.1是IPv4，因此地址栏输入127.0.0.1会出现400 -Bad Request。
+参考来源  丁锅锅   &hellip; <a class="read-more" href="/post/safari_localhost/">&raquo;</a>
+    </p>
+	</section>
+	<footer class="post-meta">
+    <time class="post-date">November 12, 2019</time>
+	</footer>
+</article>
+
+  
+  <article class="post">
+	<header class="post-header">
+    
 		<h2 class="post-title"><a href="/post/msoffice_tips/">MS Office 常用操作帮助</a></h2>
 	</header>
 	<section class="post-excerpt">
