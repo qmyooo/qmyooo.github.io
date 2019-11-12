@@ -128,7 +128,7 @@
 
 <h4 id="繁简转换">繁简转换</h4>
 
-<p>请看Outlook中的<a href="####繁简转换（不转换常用词汇）">繁简转换（不转换常用词汇）</a></p>
+<p>请看Outlook中的[繁简转换（不转换常用词汇）]</p>
 
 <hr />
 
@@ -181,9 +181,9 @@
 
 <h4 id="flash-fill">Flash Fill</h4>
 
-<ol>
+<ul>
 <li>这个太简单了，略</li>
-</ol>
+</ul>
 
 <h4 id="sparkine-迷你图">Sparkine（迷你图）</h4>
 
@@ -262,47 +262,61 @@
 
 <h4 id="重要函数及符号">重要函数及符号</h4>
 
-<blockquote>
-<p>&amp;：合并单元格信息
-&ldquo;&ldquo;：双引号内为文本
-?：通配符，代表任意单个字符
-*：通配符，代表任意多个字符</p>
+<pre><code> &amp;：合并单元格信息
 
-<p>=PROPER()：首字母大写
-=UPPER()：全大写
-=LOWER()：全小写</p>
+ &quot;&quot;：双引号内为文本
 
-<p>=IF()：判断，eg.= IF(E24&gt;=50,&ldquo;PASS&rdquo;,&ldquo;FALSE&rdquo;) 的含义为判断E24的值大于等于50，是则返回PASS，不是则返回FALSE</p>
+ ?：通配符，代表任意单个字符
 
-<p>=AND()：和，eg.=IF(AND(C11=&ldquo;Cash&rdquo;,B11&gt;15000),&ldquo;YES&rdquo;,&ldquo;&rdquo;)的含义为判断C11的值为Cash并且B11的值大于15000，是则返回YES，不是则返回空值
-=OR()：或，eg.=IF(OR(C11=&ldquo;Visa&rdquo;,C11=&ldquo;Delta&rdquo;,B11*5%,&ldquo;&rdquo;))的含义为判断C11的值为Visa或者为Delta，是则返回B11*5%的计算值，不是则返回空值</p>
+ *：通配符，代表任意多个字符
 
-<p>=SUMIF()：条件求和，eg.=SUMIF(D20:D1275,A7,P20:P1275)的含义为D20:D1275范围内的值=A7的值，对符合上述条件的P20:P1275范围内的值进行求和
-=SUMIFS()：多条件求和，eg.=SUMIFS(P20:P1275,D20:D1275,B14,A20:A1275,A14)的含义为D20:D1275范围内的值=B14的值，A20:A1275范围内的值=A14值，对符合上述条件的P20:P1275内的值进行求和</p>
+ =PROPER()：首字母大写
 
-<p>=COUNT：计数，eg.=COUNT(F12:F966)的含义为计算F12:F966范围内<strong>纯数字</strong>单元的数量
-=COUNTA：计数，eg.==COUNTA(F12:F966)的含义为计算F12:F966范围内<strong>所有单元</strong>的数量
-=COUNTIF：条件计数，eg.=COUNTIF(L12:L966,\&rdquo;&lt;10000\&ldquo;)的含义为计算L12:L966范围内的值&lt;10000的单元的数量
-=COUNTIFS：多条件计数，eg.=COUNTIFS(L12:L966,\&rdquo;&gt;7000\&ldquo;,F12:F966,\&ldquo;=12915\&ldquo;)的含义为计算L12:L966范围内的值&gt;7000，F12:F966范围内的值=12915，符号上述条件的单元的数量</p>
+ =UPPER()：全大写
 
-<p>=ROUND，四舍五入到指定位数，eg.=ROUND(E12,2)的含义为将E12的值保留2位小数
-=INT，取整，eg.=INT(E12)的含义为将E12的值进行取整（注意，INT函数取整并非四舍五入取整）</p>
+ =LOWER()：全小写
 
-<p>=SUMPRODUCT()，相乘相加，eg.=SUMPRODUCT(E12:E17,F12:F17)的含义为将E12:E17与F12:F17数组进行相乘再相加
-Array，数组，eg.{=SUM(E12:E17*F12:F17)}的含义同上</p>
+ =IF()：判断，eg.= IF(E24&gt;=50,&quot;PASS&quot;,&quot;FALSE&quot;) 的含义为判断E24的值大于等于50，是则返回PASS，不是则返回FALSE
 
-<p>=MAX()，取最大值
-=MIN()，取最小值
-=AVERAGE()，取平均值</p>
+ =AND()：和，eg.=IF(AND(C11=&quot;Cash&quot;,B11&gt;15000),&quot;YES&quot;,&quot;&quot;)的含义为判断C11的值为Cash并且B11的值大于15000，是则返回YES，不是则返回空值
 
-<p>=DATEDIF()，日期差异，eg.=DATEDIF(B7,C7,&ldquo;Y&rdquo;)的含义为开始日期为B7，结束日期为C7，两个日期相差的年数，同理=DATEDIF(B7,C7,&ldquo;M&rdquo;)为开始日期为B7，结束日期为C7，两个日期相差的月数；=DATEDIF(B7,C7,&ldquo;D&rdquo;)为开始日期为B7，结束日期为C7，两个日期相差的天数
-=TODAY()，今天，返回今天的日期值
-=YEAR()，年</p>
+ =OR()：或，eg.=IF(OR(C11=&quot;Visa&quot;,C11=&quot;Delta&quot;,B11*5%,&quot;&quot;))的含义为判断C11的值为Visa或者为Delta，是则返回B11*5%的计算值，不是则返回空值
 
-<p>=VLOOKUP()，查找，eg.=VLOOKUP(C26,C8:E20,2,FALSE)的含义为查找C8:E20范围内与C26精确匹配的值，返回范围内对应的第2列的值(注意，模糊匹配为TRUE，精确匹配为FALSE，并且查找范围第一列必须是查找值匹配列，因为VLOOKUP只能向右查找)</p>
+ =SUMIF()：条件求和，eg.=SUMIF(D20:D1275,A7,P20:P1275)的含义为D20:D1275范围内的值=A7的值，对符合上述条件的P20:P1275范围内的值进行求和
 
-<p>=IFERROR()，条件错误，eg.=IFERROR(VLOOKUP(A4,&lsquo;2018&rsquo;!A1:D160,4,FALSE),&ldquo;NULL&rdquo;)的含义为当查找2018表中A1:D160范围内与A4精确匹配的值，返回范围内对应第4列的值，如果查找不到，返回NULL</p>
-</blockquote>
+ =SUMIFS()：多条件求和，eg.=SUMIFS(P20:P1275,D20:D1275,B14,A20:A1275,A14)的含义为D20:D1275范围内的值=B14的值，A20:A1275范围内的值=A14值，对符合上述条件的P20:P1275内的值进行求和
+
+ =COUNT：计数，eg.=COUNT(F12:F966)的含义为计算F12:F966范围内纯数字单元的数量
+
+ =COUNTA：计数，eg.==COUNTA(F12:F966)的含义为计算F12:F966范围内所有单元的数量
+
+ =COUNTIF：条件计数，eg.=COUNTIF(L12:L966,&quot;&lt;10000&quot;)的含义为计算L12:L966范围内的值&lt;10000的单元的数量
+
+ =COUNTIFS：多条件计数，eg.=COUNTIFS(L12:L966,&quot;&gt;7000&quot;,F12:F966,&quot;=12915&quot;)的含义为计算L12:L966范围内的值&gt;7000，F12:F966范围内的值=12915，符号上述条件的单元的数量
+
+ =ROUND，四舍五入到指定位数，eg.=ROUND(E12,2)的含义为将E12的值保留2位小数
+
+ =INT，取整，eg.=INT(E12)的含义为将E12的值进行取整（注意，INT函数取整并非四舍五入取整）
+
+ =SUMPRODUCT()，相乘相加，eg.=SUMPRODUCT(E12:E17,F12:F17)的含义为将E12:E17与F12:F17数组进行相乘再相加
+ Array，数组，eg.{=SUM(E12:E17*F12:F17)}的含义同上
+
+ =MAX()，取最大值
+
+ =MIN()，取最小值
+
+ =AVERAGE()，取平均值
+
+ =DATEDIF()，日期差异，eg.=DATEDIF(B7,C7,&quot;Y&quot;)的含义为开始日期为B7，结束日期为C7，两个日期相差的年数，同理=DATEDIF(B7,C7,&quot;M&quot;)为开始日期为B7，结束日期为C7，两个日期相差的月数；=DATEDIF(B7,C7,&quot;D&quot;)为开始日期为B7，结束日期为C7，两个日期相差的天数
+
+ =TODAY()，今天，返回今天的日期值
+
+ =YEAR()，年
+
+ =VLOOKUP()，查找，eg.=VLOOKUP(C26,C8:E20,2,FALSE)的含义为查找C8:E20范围内与C26精确匹配的值，返回范围内对应的第2列的值(注意，模糊匹配为TRUE，精确匹配为FALSE，并且查找范围第一列必须是查找值匹配列，因为VLOOKUP只能向右查找)
+
+ =IFERROR()，条件错误，eg.=IFERROR(VLOOKUP(A4,'2018'!A1:D160,4,FALSE),&quot;NULL&quot;)的含义为当查找2018表中A1:D160范围内与A4精确匹配的值，返回范围内对应第4列的值，如果查找不到，返回NULL
+</code></pre>
 
 <h4 id="常用快捷键-快捷操作">常用快捷键/快捷操作</h4>
 
@@ -330,7 +344,7 @@ Array，数组，eg.{=SUM(E12:E17*F12:F17)}的含义同上</p>
 
 <h3 id="q-a">Q&amp;A</h3>
 
-<p>Any questions please contact with Mengyuan Qin[mengyuan.qin@foxmail.com]</p>
+<p>Any question please contact with [Mengyuan Qin][mengyuan.qin@foxmail.com]</p>
 
 <h3 id="copyright-statement">Copyright Statement</h3>
 
